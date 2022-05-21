@@ -40,7 +40,38 @@ class _AddtodoState extends State<Addtodo> {
       ),
       body: SafeArea(
         child: Column(
-          children: [],
+          children: [
+            TextFormField(
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,          
+              ),
+              decoration: const InputDecoration(                
+                hintText: "enter title",
+                
+                enabledBorder: OutlineInputBorder(borderSide: BorderSide.none,),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                )
+              ),
+            ),
+            
+          TextFormField(
+              style: const TextStyle(
+                
+                fontSize: 16,
+                color: Colors.black,          
+              ),
+              decoration: const InputDecoration(                
+                hintText: "enter your description ",
+                
+                enabledBorder: OutlineInputBorder(borderSide: BorderSide.none,),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                )
+              ),
+            ),  
+          ],
         ),
       ),
     );
