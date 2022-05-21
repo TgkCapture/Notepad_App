@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notepad/model/list_model.dart';
 
 class Addtodo extends StatefulWidget {
   const Addtodo({ Key? key }) : super(key: key);
@@ -38,6 +39,53 @@ class _AddtodoState extends State<Addtodo> {
           ),
         ],
       ),
+      bottomNavigationBar: 
+       Container(
+      height: 100,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [BoxShadow(
+          color: Colors.blue.withOpacity(0.5), 
+          spreadRadius: 2.0, 
+          blurRadius: 8.0)]
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [    
+            Column(
+              children: [
+                Spacer(),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                          color: Colors.blue.withOpacity(0.5), 
+                          spreadRadius: 2.0, 
+                          blurRadius: 8.0
+                        )
+                      ]),
+                    padding: const EdgeInsets.all(10.0),
+                    child: const Icon(
+                      Icons.check,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+              Spacer(),
+              Row(
+                children: List.generate(products.length, (index) => colorSelection(index))
+              )
+              ,
+              Spacer(),
+            ],
+          ),
+      ),
+   
       body: SafeArea(
         child: Column(
           children: [
@@ -74,6 +122,24 @@ class _AddtodoState extends State<Addtodo> {
           ],
         ),
       ),
+    );
+  }
+
+  Padding colorSelection(int index) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10.0),
+      child: InkWell(
+                onTap: () {},
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    color: products[index].color,
+                    borderRadius: BorderRadius.circular(10.0)
+                  ),
+                  
+                ),
+              ),
     );
   }
 }
