@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notepad/screens/add_list/add_todo.dart';
 
 class customBottomBar extends StatelessWidget {
   const customBottomBar({
@@ -19,14 +20,19 @@ class customBottomBar extends StatelessWidget {
           IconButton(
           onPressed: (){}, 
           icon: const Icon(Icons.space_dashboard_rounded)),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: Colors.blue[400],
-              shape: BoxShape.circle,
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Addtodo()));
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                color: Colors.blue[400],
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.add,
+              color: Colors.white,),
             ),
-            child: const Icon(Icons.add,
-            color: Colors.white,),
           ),
 
           IconButton(
