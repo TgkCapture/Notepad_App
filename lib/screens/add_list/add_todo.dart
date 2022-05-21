@@ -41,7 +41,7 @@ class _AddtodoState extends State<Addtodo> {
       ),
       bottomNavigationBar: 
        Container(
-      height: 100,
+      height: 70,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [BoxShadow(
