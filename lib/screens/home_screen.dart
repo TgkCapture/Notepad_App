@@ -29,10 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
           //search section
            searchBar(),
            listButtonContainer(),
-
-
-
-
           
           listData(),
           
